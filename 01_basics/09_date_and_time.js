@@ -37,6 +37,8 @@
 // console.log(myTimeStamp);
 // console.log(myCreatedDate.getTime());
 
+
+
 // // convert into seconds 
 // console.log(Math.floor(Date.now()/1000));
 
@@ -50,6 +52,11 @@ console.log(newDate.getFullYear());
 // string interpolation
 // `${newDate.getDay()} and the time`
 
+
+// to locale string mein hum objects define krte hai and we can define parameters kayi baar
+
+// default is konsa internalisation chahiye in string format 
+// ctrl + spacebar ka kuch toh kaam hai guesss
 newDate.toLocaleString('default',{
     weekday:"long",
     // timeZone: ''
