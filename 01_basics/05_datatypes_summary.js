@@ -40,3 +40,5 @@ console.log(myFunc); // returns function or in generally in js usko bola jata ha
 console.log(id);
 
 // for more study : https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
