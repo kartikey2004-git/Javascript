@@ -42,3 +42,9 @@ if (Object.keys(emptyObj).length === 0 ) {
 // }
 // console.log(Object.keys(obj1));
 
+
+// some statements of general knowledge
+
+// false == 0 (returns true)
+// false == ''  (returns true)
+// 0 == '' (returns true)
