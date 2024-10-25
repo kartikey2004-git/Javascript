@@ -48,3 +48,26 @@ if (Object.keys(emptyObj).length === 0 ) {
 // false == 0 (returns true)
 // false == ''  (returns true)
 // 0 == '' (returns true)
+
+
+// Nullish Coalescing OPerator (??) : null undefined (basically work as callback function)
+
+let val1 ;
+// val1 = 5 ?? 10
+// val1 = null ?? 10 
+
+// ye jo operator hai ye kam krta hai jab pehli value  null  hai  ya undefned hai toh alternate value assign krdeta hai
+
+// val1 = undefined ?? 10
+
+val1 = null ?? 10 ?? 20
+
+console.log(val1);
+
+
+// Ternary operator 
+
+// condition ? true : false
+
+const iceTeaPrice = 100
+iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80");
