@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121 ; color: white;">
+    <ul class = "language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(LanguageName){
+        const li = document.createElement('li')
+        li.innerHTML = `${LanguageName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    // in optimize manner
+    function addOptimizeWayLanguage(langName){
+        const li = document.createElement('li')
+        // const addText = document.createTextNode(langName)
+        // li.appendChild(addText)
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptimizeWayLanguage("golang")
+
+
+    // quick thesis
+    /* Selects the second li element in a list */
+    // li:nth-child(2)
+
+
+
+    //Edit 
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // console.log(secondLang)
+    // secondLang.innerHTML = "gojo"
+    const newli = document.createElement('li')
+    newli.textContent = "gojo"
+    secondLang.replaceWith(newli)
+   // kyuki humare pass element ka reference hai
+
+   
+
+   // edit
+   const FirstLang = document.querySelector("li:nth-child(1)")
+   FirstLang.outerHTML = "<li>typescript</li>"
+
+
+   // remove
+   const lastLang = document.querySelector("li:last-child")
+   lastLang.remove()
+
+   // final recall
+   // optimized approach hoti hai,
+   // pura tree structure kaise hota hai ,
+   // nodelist kya kya aati hai ,
+   // kaise traverse hota hai puri node list
+   // nodelist bhi toh ek dom hota hai
+   // traversing and parent child connection
+   // how to add new element in different way
+   
+</script>
+</html>
