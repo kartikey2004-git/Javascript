@@ -9,6 +9,4 @@
 
 ```Javascript
 console.log("kartik")
-
-
 ```
