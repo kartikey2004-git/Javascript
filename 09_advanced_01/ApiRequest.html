@@ -1,0 +1,73 @@
+<!--XML HTTP REQUEST
+1.readyState property
+(request send krte hai response mein data milta hai)
+-->
+<!--XML ki AJAX request-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- <style>
+    #card{
+      margin-top: 100px;
+      margin-left: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width:100px;
+      height:100px;
+      background-color: red;
+    }
+  </style> -->
+  <body style="background-color: #212121; color: white">
+    <!-- <div id="card" <img src ="img_avatar.png" alt="Avatar">boom
+      <div id="innerDiv"></div>
+    </div> -->
+  </body>
+  <script>
+    // sabse pehle ek object bnate hai
+
+    // class se object bna rhe hai new keyword se
+
+    // open() hi actual mein request ko bhejta hai, available jab hoga jab hum XMLhttprequest type ko bna lenge
+    //GET METHOD or POST method
+    const requestURL = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestURL);
+
+    // for continously tracking the states
+
+    // jaise hi state change hoti baar baar function execute hota hai
+
+    // humein jo return mein milta hai response and response jo milta hai api se wo string mein hi aata hai most of the times
+
+    xhr.onreadystatechange = function(){
+      console.log(xhr.readyState);
+      if(xhr.readyState === 4){
+        const data = JSON.parse(this.responseText)  // this for particular current context of the function // parse JSON ko string mein convert kr deta hai
+        console.log(typeof(data)) // undefined
+        console.log(data.bio)
+        console.log(data)
+      }
+    }
+    console.log(xhr.readyState)
+    // console.log("here")
+    xhr.send(); //open() call hua hai yaha pe send() method
+
+
+    //------------------------CONSOLE.LOG()--------
+    // console.log actually mein ek debugging tool ya debugger hai browser hai (dev tool hai actual mein) and ye console.log run time kesath aata hai
+    
+    // V8 engine for running js (node js environment)
+    
+    //debugging tools and access of api deta hai
+
+    // v8 github repo mein src folder mein d8 mein d8-console.cc se console debugger tool aata hai
+
+    </script>
+</html>
+<!--Card assignment at 22:00-->

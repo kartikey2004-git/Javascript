@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const sayDate = function(str){
+      console.log(str,Date.now());
+    }
+    const intervalId = setInterval(sayDate,1000,"hi")
+    clearInterval(intervalId)
+
+    // Here is the solution
+
+    let changeMe; // Declare changeMe in a higher scope so it can be accessed in both functions
+
+    const textChange = function (str) {
+      document.querySelector("h1").innerHTML = "Hello guys, welcome welcome";
+      console.log(str,Date.now());
+    };
+
+    document.querySelector("#start").addEventListener("click", function () {
+      changeMe = setInterval(textChange, 1000,"text changed"); // Set changeMe here
+    });
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(changeMe); // Simply clear the interval without storing the return value
+      console.log("Text change stopped");
+      document.querySelector("h1").innerHTML = "chai aur javascript"
+    });
+
+
+    // here is the another solution by an user
+    //   console.log(str, Date.now());
+    // }
+    // let interVal;
+    // document.querySelector('#start').addEventListener('click',function(){
+    //   const stInt = function(str){
+    //   interValid = setInterval(stInt, 1000, 'Hello World');
+    // })
+    // document.querySelector('#stop').addEventListener('click', function(){
+    //   clearInterval(interValid);
+    //   console.log('clicked');
+    // })
+    </script>
+</html>
