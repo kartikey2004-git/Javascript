@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure and chai</title>
+</head>
+
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // function init() {
+    //     let name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // // init() creates a local variable called name and a function called displayName(). The displayName() function is an inner function that is defined inside init() and is available only within the body of the init() function. Note that the displayName() function has no local variables of its own. However, since inner functions have access to the variables of outer scopes, displayName() can access the variable name declared in the parent function, init().
+
+    // function outer(){
+    //     let username = "hitesh"
+    //     // console.log("OUTER",secret);
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("INNER",username);
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo",username);
+    //         console.log(secret);
+    //     }
+    //     inner();
+    //     innerTwo();
+    // }
+    // outer();
+
+    // console.log("TOO Outer", username);
+    // username is not defined
+
+    // outer and inner function aapas mein memory share kr rhe hai
+    // function ke andar function mein hum outer function ke saare variables
+    // bhai bhai share nhi krte hai
+
+
+    // yeh to hogyi lexical scoping ki baatcheet
+
+    // ab hogi closure ki baatcheet
+
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+</script>
+
+<script>
+    // document.getElementById('orange').onclick = function () {
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById('green').onclick = function () {
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+
+    document.getElementById('green').onclick = clickHandler("green")
+</script>
+</html>
+
+
+<!--although humne stack se functional execution context hata diya hai lekin memory ke reference ka  role aa jata hai-->
+
+<!--agar humne makefunction()  call kiya hai toh woh execute hoga and then return krega displayname ka inner function and lexical scoping ki wajah se jab hum display function return kr rhe hai toh display function ka pura lexical scoping context uthke jata hai that means execution scope of inner function and outer function both and also share memory -->
+
+
